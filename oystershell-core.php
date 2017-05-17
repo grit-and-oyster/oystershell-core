@@ -56,3 +56,13 @@ function osc_load_library_cmb2_conditionals() {
 	require_once OS_LIB_DIR . 'cmb2-conditionals/cmb2-conditionals.php';
 
 }
+
+/**
+ * Load the slider field extension to the CMB2 library
+ * This adds an adjustable slider CMB2 field type.
+ */
+function osc_load_library_cmb2_field_slider() {
+
+	require_once OS_LIB_DIR . 'cmb2-field-slider/cmb2_field_slider.php';
+
+}
