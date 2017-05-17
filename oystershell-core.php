@@ -66,3 +66,14 @@ function osc_load_library_cmb2_field_slider() {
 	require_once OS_LIB_DIR . 'cmb2-field-slider/cmb2_field_slider.php';
 
 }
+
+/**
+ * Load the historical dates library
+ * Includes functions for handling dates outside the years 1901-2038 on Unix and 1970-2038 on Windows.
+ */
+function osc_load_library_historical_dates() {
+
+	require_once OS_LIB_DIR . 'historical-dates/historical-dates.php';
+	require_once OS_LIB_DIR . 'historical-dates/adodb-time.inc.php';
+
+}
