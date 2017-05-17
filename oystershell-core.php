@@ -24,3 +24,14 @@ if ( ! defined( 'WPINC' ) ) {
 
 define('OS_CORE_DIR',dirname(__FILE__) . '/');
 define('OS_LIB_DIR',OS_CORE_DIR . 'libraries/');
+
+/**
+ * Load the Oystershell library
+ * This library contains all the default Oystershell core classes.
+ */
+function osc_load_library_oystershell() {
+
+	require_once OS_LIB_DIR . 'oystershell/init.php';
+	require_once OS_CORE_DIR . 'includes/helper-functions.php';
+	require_once OS_CORE_DIR . 'includes/postmeta-functions.php';
+}
