@@ -46,3 +46,13 @@ function osc_load_library_cmb2() {
 	require_once OS_CORE_DIR . 'includes/cmb-functions.php';
 
 }
+
+/**
+ * Load the conditionals extension to the CMB2 library
+ * This adds to CMB2 forms the ability to define fields that display conditionally on the response to other fields.
+ */
+function osc_load_library_cmb2_conditionals() {
+
+	require_once OS_LIB_DIR . 'cmb2-conditionals/cmb2-conditionals.php';
+
+}
