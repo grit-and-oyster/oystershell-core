@@ -21,3 +21,6 @@
 if ( ! defined( 'WPINC' ) ) {
 	die;
 }
+
+define('OS_CORE_DIR',dirname(__FILE__) . '/');
+define('OS_LIB_DIR',OS_CORE_DIR . 'libraries/');
