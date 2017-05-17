@@ -35,3 +35,14 @@ function osc_load_library_oystershell() {
 	require_once OS_CORE_DIR . 'includes/helper-functions.php';
 	require_once OS_CORE_DIR . 'includes/postmeta-functions.php';
 }
+
+/**
+ * Load the CMB2 library
+ * CMB2 is a developer's toolkit for building metaboxes, custom fields, and forms for WordPress.
+ */
+function osc_load_library_cmb2() {
+
+	require_once OS_LIB_DIR . 'CMB2/init.php';
+	require_once OS_CORE_DIR . 'includes/cmb-functions.php';
+
+}
