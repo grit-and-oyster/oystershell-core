@@ -23,9 +23,9 @@ function osc_get_post_format( $post_id ) {
 		$post_format = 'standard';
 
 	if ( is_sticky( $post_id ) )
-		$post_format = 'sticky';	
+		$post_format = 'sticky';
 
-	if ( is_custom_post_type() ) 
+	if ( is_custom_post_type() )
 		$post_format = get_post_type( $post_id );
 
 	return $post_format;
@@ -40,10 +40,10 @@ function osc_get_post_format( $post_id ) {
  * https://tommcfarlin.com/post-is-paginated/
  */
 function osc_is_paginated_post() {
- 
+
 	global $multipage;
 	return 0 !== $multipage;
- 
+
 } // end oystershell_is_paginated_post
 
 /**
@@ -71,7 +71,7 @@ function osc_post_format_link_get_url( $post_id ) {
 /**
  * Cleans a URL for display
  *
- * @return   string    A human readable web address 
+ * @return   string    A human readable web address
  * @package  includes
  * @since    1.0.0
  */
@@ -123,29 +123,42 @@ function osc_is_custom_post_type( $post = NULL ) {
 }
 
 /**
+ * Check if a post is empty of content.
+ *
+ * @param  $str
+ * @return boolean
+ * @package  includes
+ * @since    1.2.0
+ */
+function osc_empty_content($str) {
+    return trim(str_replace('&nbsp;','',strip_tags($str))) == '';
+}
+
+
+/**
  * Gets the id of the topmost ancestor of the current page. Returns the current
  * page's id if there is no parent.
- * 
+ *
  * @uses object $post
- * @return int 
+ * @return int
  * @package  includes
  * @since    1.0.0
  */
 function osc_get_post_top_ancestor_id(){
     global $post;
-    
+
     if($post->post_parent){
         $ancestors = array_reverse(get_post_ancestors($post->ID));
         return $ancestors[0];
     }
-    
+
     return $post->ID;
-	
+
 }
 
 /**
  * Gets a connected post. For use with the Post2Posts relationship plugin.
- * 
+ *
  * @package  includes
  * @since    1.0.0
  */
@@ -164,7 +177,7 @@ function osc_get_connections( $connected_type, $meta = '' ) {
 
 /**
  * Gets a connected user. For use with the Post2Posts relationship plugin.
- * 
+ *
  * @package  includes
  * @since    1.0.0
  */
@@ -201,7 +214,7 @@ function osc_display_connections( $connected_type, $heading, $div_id ) {
 
 	</div>
 
-	<?php 
+	<?php
 	// Prevent weirdness
 	wp_reset_postdata();
 
@@ -231,7 +244,7 @@ function osc_display_connections_related( $connected_type, $heading, $div_id, $f
 
 	</div>
 
-	<?php 
+	<?php
 	// Prevent weirdness
 	wp_reset_postdata();
 
