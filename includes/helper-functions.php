@@ -25,7 +25,7 @@ function osc_get_post_format( $post_id ) {
 	if ( is_sticky( $post_id ) )
 		$post_format = 'sticky';
 
-	if ( is_custom_post_type() )
+	if ( osc_is_custom_post_type() )
 		$post_format = get_post_type( $post_id );
 
 	return $post_format;
