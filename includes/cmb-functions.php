@@ -31,6 +31,30 @@ function osc_cmb_only_show_on_admin_user_profile( $field ) {
 }
 
 /**
+ * Wrapper function around cmb2_get_option.
+ *
+ * @param  string $key     Options array key
+ * @param  string $key     Options array key
+ * @param  mixed  $default Optional default value
+ * @return mixed           Option value
+ */
+function osc_cmb_get_option( $metabox_array, $key, $default = false ) {
+	if ( function_exists( 'cmb2_get_option' ) ) {
+		// Use cmb2_get_option as it passes through some key filters.
+		return cmb2_get_option( $metabox_array, $key, $default );
+	}
+	// Fallback to get_option if CMB2 is not loaded yet.
+	$opts = get_option( $metabox_array, $default );
+	$val = $default;
+	if ( 'all' == $key ) {
+		$val = $opts;
+	} elseif ( array_key_exists( $key, $opts ) && false !== $opts[ $key ] ) {
+		$val = $opts[ $key ];
+	}
+	return $val;
+}
+
+/**
  * Gets the available options for a users display_name field
  *
  * @since  1.0.0
