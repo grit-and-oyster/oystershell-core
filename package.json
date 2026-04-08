@@ -1,0 +1,20 @@
+{
+  "name": "oystershell-core",
+  "version": "1.0.0",
+  "description": "Core functions and libraries for Grit and Oyster WordPress projects.",
+  "homepage": "https://github.com/grit-and-oyster/oystershell-core#readme",
+  "bugs": {
+    "url": "https://github.com/grit-and-oyster/oystershell-core/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/grit-and-oyster/oystershell-core.git"
+  },
+  "license": "ISC",
+  "author": "Grit & Oyster",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  }
+}
